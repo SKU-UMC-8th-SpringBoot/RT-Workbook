@@ -7,21 +7,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import umc.study.apiPayload.ApiResponse;
-import umc.study.domain.Review;
-import umc.study.service.ReviewService.ReviewCommandService;
+import umc.study.domain.mapping.MemberMission;
+import umc.study.service.StatusService.StatusCommandService;
 import umc.study.web.dto.ReviewRequestDTO;
 import umc.study.web.dto.ReviewResponseDTO;
+import umc.study.web.dto.StatusRequestDTO;
+import umc.study.web.dto.StatusResponseDTO;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/review")
-public class ReviewRestController {
+@RequestMapping("/status")
+public class StatusRestController {
 
-    private final ReviewCommandService ReviewCommandService;
+    private final StatusCommandService StatusCommandService;
 
     @PostMapping("/")
-    public ApiResponse<ReviewResponseDTO.JoinReviewResultDTO> join(@RequestBody @Valid ReviewRequestDTO.JoinReviewDTO request) {
-        Review review = ReviewCommandService.joinReview(request);
+    public ApiResponse<StatusResponseDTO.JoinStatusResultDTO> join(@RequestBody @Valid StatusRequestDTO.JoinStatusDTO request) {
+        MemberMission memberMission = StatusCommandService.joinStatus(request);
         return ApiResponse.onSuccess(null);
     }
 
