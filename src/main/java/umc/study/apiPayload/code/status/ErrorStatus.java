@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import umc.study.apiPayload.code.BaseErrorCode;
 import umc.study.apiPayload.code.ErrorReasonDTO;
 import umc.study.domain.FoodCategory;
+import umc.study.domain.Region;
 
 @Getter
 @AllArgsConstructor
@@ -28,7 +29,9 @@ public enum ErrorStatus implements BaseErrorCode {
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트"),
 
     // 푸드카테고리 관련 에러
-    FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOODCATEGORY4001", "푸드카테고리가 없습니다."); // 마지막은 세미콜론
+    FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOODCATEGORY4001", "푸드카테고리가 없습니다."), // 마지막은 세미콜론
+
+    REGION_NOT_FOUND(HttpStatus.BAD_REQUEST, "REGION4001","지역이 없습니다.");
 
     private final HttpStatus httpStatus;
     private final String code;
