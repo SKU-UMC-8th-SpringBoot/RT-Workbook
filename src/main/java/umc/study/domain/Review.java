@@ -19,6 +19,8 @@ public class Review extends BaseEntity {
 
     private Float score;
 
+    private String Body;
+
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
@@ -26,4 +28,6 @@ public class Review extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
+
+
 }

@@ -12,7 +12,7 @@ import umc.study.domain.enums.MissionStatus;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class MemberMission extends BaseEntity { fdklfdkfd
+public class MemberMission extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
