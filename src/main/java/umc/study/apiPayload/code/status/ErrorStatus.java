@@ -12,11 +12,17 @@ import umc.study.domain.Region;
 @AllArgsConstructor
 public enum ErrorStatus implements BaseErrorCode {
 
+
     // 일반 에러
     _INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "COMMON500", "서버 에러, 관리자에게 문의 바랍니다."),
     _BAD_REQUEST(HttpStatus.BAD_REQUEST,"COMMON400","잘못된 요청입니다."),
     _UNAUTHORIZED(HttpStatus.UNAUTHORIZED,"COMMON401","인증이 필요합니다."),
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "금지된 요청입니다."),
+
+    //토큰 에러
+    INVALID_TOKEN(HttpStatus.BAD_REQUEST,"TOKEN4001","토큰업슴다"),
+    INVALID_PASSWORD(HttpStatus.BAD_REQUEST,"PASSWORD4001","비번업슴다"),
+
 
     // 멤버 에러
     MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBER4001", "사용자가 없습니다."),

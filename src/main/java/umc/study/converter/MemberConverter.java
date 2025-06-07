@@ -44,4 +44,20 @@ public class MemberConverter {
                 .memberPreferList(new ArrayList<>())
                 .build();
     }
+    public static MemberResponseDTO.MemberInfoDTO toMemberInfo(Member member) {
+        return MemberResponseDTO.MemberInfoDTO.builder()
+                .name(member.getName())
+                .email(member.getEmail())
+                .gender(String.valueOf(member.getGender()))
+                .build();
+    }
+
+
+    public static MemberResponseDTO.LoginResultDTO toLoginResultDTO(Long memberId, String accessToken) {
+        return MemberResponseDTO.LoginResultDTO.builder()
+                .memberId(memberId)
+                .accessToken(accessToken)
+                .build();
+    }
+
 }
